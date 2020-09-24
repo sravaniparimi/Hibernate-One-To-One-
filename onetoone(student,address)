@@ -1,0 +1,62 @@
+STUDENT
+
+package com.ex;
+
+public class Student {
+	private int sid;
+	private String sname;
+	private int marks;
+	public int getSid() {
+		return sid;
+	}
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
+	public String getSname() {
+		return sname;
+	}
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+	public int getMarks() {
+		return marks;
+	}
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+}
+
+ADDRESS
+
+package com.ex;
+
+public class Address {
+private int aid;
+private String city;
+private String state;
+private Student s_obj;
+public int getAid() {
+	return aid;
+}
+public void setAid(int aid) {
+	this.aid = aid;
+}
+public String getCity() {
+	return city;
+}
+public void setCity(String city) {
+	this.city = city;
+}
+public String getState() {
+	return state;
+}
+public void setState(String state) {
+	this.state = state;
+}
+public Student getS_obj() {
+	return s_obj;
+}
+public void setS_obj(Student s_obj) {
+	this.s_obj = s_obj;
+}
+}
