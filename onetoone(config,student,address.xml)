@@ -1,0 +1,64 @@
+CONFIGURATION
+
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+    
+    
+    
+    <hibernate-configuration>
+<session-factory>
+<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+<property name="connection.url">jdbc:mysql://localhost:3306/jnit</property>
+<property name="connection.user">root</property>
+<property name="connection.password">1234567890</property>
+
+
+<property name="show_sql">true</property>
+<property name="dialet">org.hibernate.dialect.MySQLDialect</property>
+<property name="hbm2ddl.auto">create</property>
+
+
+<mapping resource="student.xml"/>
+<mapping resource="address.xml"/>
+
+</session-factory>
+</hibernate-configuration>
+    
+    STUDENT
+    
+    <!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+<class name="com.ex.Student" table="student20">
+<id name="sid" column="sid"/>
+<property name="sname" column="sname"/>
+<property name="marks" column="marks"></property>
+
+</class>
+
+</hibernate-mapping>
+
+ADDRESS
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+<class name="com.ex.Address" table="address20">
+<id name="aid" column="aid">
+<generator class="assigned">
+<param name="property">s-obj</param>
+</generator>
+</id>
+<property name="city" column="city"/>
+<property name="state" column="state"></property>
+<one-to-one name="s_obj" class="com.ex.Student" cascade="all"></one-to-one>
+
+</class>
+
+</hibernate-mapping>
